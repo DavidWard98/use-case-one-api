@@ -1,0 +1,30 @@
+
+
+#Generic Post with parameters
+curl -i -H "Content-Type: application/json" -X POST -d'{
+
+}' localhost:8080/
+
+#Post with parameters
+curl -i -H "Content-Type: application/json" -X POST -d'{
+"username": "aeromag2000@gmail.com",
+"password": "password",
+"userLevelID": "1"
+}' localhost:8080/usermgmt/adduser
+
+curl -i -H "Content-Type: application/json" -X POST -d'{
+"username": "aeromag5000@gmail.com",
+"password": "password",
+"userLevelID": "2"
+}' localhost:8080/usermgmt/adduser
+
+curl -i -H "Content-Type: application/json" -X POST -d'{
+"username": "aeromag9000@gmail.com",
+"password": "password",
+"userLevelID": "3"
+}' localhost:8080/usermgmt/adduser
+
+
+# DELETE MAPPING
+
+curl -i -H "Content-Type: application/json" -X "DELETE" localhost:8080/usermgmt/users/1
