@@ -42,6 +42,10 @@ public class User implements Serializable {
      **/
 
     // @TODO I have no idea what this method is supposed to do
+    /*
+    * @ Above - Userlevel wouldn't necessarily be an attribute of User based on the ERD
+    * JPA would probably resolve this method on it's own so this method may not need to be implemented
+    */
     public String getUserLevel() {
         return "not implemented";
     }
