@@ -27,6 +27,7 @@ public class UserController {
     //get all users
     @GetMapping("/users")
     public List<User> getAllUsers() {
+        // @TODO remove password field from query
         return userRepository.findAll();
     }
 
@@ -44,6 +45,7 @@ public class UserController {
 
     @PostMapping("/adduser")
     public User createUser(@RequestBody User user) {
+        // @TODO field validation (password minimum length)
         return userRepository.save(user);
     }
 
@@ -55,6 +57,8 @@ public class UserController {
     public ResponseEntity<Object> deleteUser(@PathVariable(value = "id") Long userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException("User", "id", userId));
         userRepository.delete(user);
+
+        // @ TODO check to make sure user isn't deleting themself
 
         //WE need this response entity to tell Spring Boot that it is okay to delete, doesn't work without
         return ResponseEntity.ok().build();
