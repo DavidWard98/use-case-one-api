@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 //Generics are the Model and the type of its primary key
 public interface UserRepository extends JpaRepository<User, Long> {
+
+  // @TODO Add method to retrieve user(s) without password attribute
+
 }
